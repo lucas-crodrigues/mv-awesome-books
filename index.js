@@ -18,9 +18,9 @@ class Book {
 
   static addEventListeners = () => {
     const addButton = document.getElementById('addButton');
-    const addTitle = document.getElementById('addTitle').value;
-    const addAuthor = document.getElementById('addAuthor').value;
-    addButton.addEventListener('click', () => { Book.addBook(addTitle, addAuthor) })
+    const addTitle = document.getElementById('addTitle');
+    const addAuthor = document.getElementById('addAuthor');
+    addButton.addEventListener('click', () => { this.addBook(addTitle.value, addAuthor.value) })
   }
 
 }
