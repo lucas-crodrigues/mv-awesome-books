@@ -37,9 +37,9 @@ class Book {
     let allBooksHTML = '';
     JSON.parse(localStorage.getItem('books')).forEach((book) => {
       allBooksHTML += `<div class="book" id="${book.title}">
-                        <p class="title">${book.title}</p>
-                        <p class="author">${book.author} </p>
-                        <button type="button" id="r_${book.title}">"Remove</button>
+                        <p class="title">Title: ${book.title}</p>
+                        <p class="author">By: ${book.author} </p>
+                        <button type="button" id="r_${book.title}">Remove</button>
                         <hr>
                       </div>`;
     });
