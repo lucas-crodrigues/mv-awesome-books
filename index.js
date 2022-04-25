@@ -1,18 +1,5 @@
-let books = [
-  {
-    title: 'Title1',
-    author: 'author1'
-  },
-  {
-    title: 'Title2',
-    author: 'author2'
-  },
-  {
-    title: 'Title3',
-    author: 'author3'
-  }
-];
-
+let books = localStorage.getItem('books')
+books = JSON.parse(books) || [];
 localStorage.setItem('books', JSON.stringify(books));
 
 class Book {
@@ -25,6 +12,7 @@ class Book {
     const ititle = document.getElementById('addTitle').value;
     const iauthor = document.getElementById('addAuthor').value;
     books.push({ title: ititle, author: iauthor });
+    localStorage.setItem('books', JSON.stringify(books));
     this.renderBooks();
   }
 
@@ -32,6 +20,7 @@ class Book {
     const button = e.target;
     const title = button.id.split('_')[1];
     books = books.filter((book) => book.title !== title);
+    localStorage.setItem('books', JSON.stringify(books));
     this.renderBooks();
     return books;
   }
@@ -48,7 +37,7 @@ class Book {
 
   static markupAllBooks() {
     let allBooksHTML = ``;
-    books.forEach((book) => {
+    JSON.parse(localStorage.getItem('books')).forEach((book) => {
       allBooksHTML += `<div class="book" id="${book.title}">
                         <p class="title">${book.title}</p>
                         <p class="author">${book.author} </p>
@@ -63,13 +52,12 @@ class Book {
   static addEventListeners = () => {
     const addButton = document.getElementById('addButton');
 
-    addButton.addEventListener('click', this.addBook );
+    addButton.addEventListener('click', this.addBook);
     let removeButtons = Array.from(document.querySelectorAll('.book button'));
     removeButtons.forEach((button) => {
       button.addEventListener('click', this.removeBook);
     })
   }
-
 }
 
 window.onload = () => {
