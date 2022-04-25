@@ -1,4 +1,4 @@
-let books = localStorage.getItem('books')
+let books = localStorage.getItem('books');
 books = JSON.parse(books) || [];
 localStorage.setItem('books', JSON.stringify(books));
 
@@ -25,9 +25,7 @@ class Book {
     return books;
   }
 
-  static getLocalStorage = () => {
-    return JSON.parse(localStorage.getItem('books'));
-  }
+  static getLocalStorage = () => JSON.parse(localStorage.getItem('books'))
 
   static renderBooks() {
     const booksContainer = document.getElementById('books-container');
@@ -36,7 +34,7 @@ class Book {
   }
 
   static markupAllBooks() {
-    let allBooksHTML = ``;
+    let allBooksHTML = '';
     JSON.parse(localStorage.getItem('books')).forEach((book) => {
       allBooksHTML += `<div class="book" id="${book.title}">
                         <p class="title">${book.title}</p>
@@ -48,15 +46,14 @@ class Book {
     return allBooksHTML;
   }
 
-
   static addEventListeners = () => {
     const addButton = document.getElementById('addButton');
 
     addButton.addEventListener('click', this.addBook);
-    let removeButtons = Array.from(document.querySelectorAll('.book button'));
+    const removeButtons = Array.from(document.querySelectorAll('.book button'));
     removeButtons.forEach((button) => {
       button.addEventListener('click', this.removeBook);
-    })
+    });
   }
 }
 
