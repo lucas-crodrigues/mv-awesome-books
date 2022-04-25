@@ -12,6 +12,9 @@ let books = [
     author: 'author3'
   }
 ];
+
+localStorage.setItem('books', JSON.stringify(books));
+
 class Book {
   constructor(title, author) {
     this.title = title;
@@ -31,6 +34,10 @@ class Book {
     books = books.filter((book) => book.title !== title);
     this.renderBooks();
     return books;
+  }
+
+  static getLocalStorage = () => {
+    return JSON.parse(localStorage.getItem('books'));
   }
 
   static renderBooks() {
@@ -63,6 +70,14 @@ class Book {
     })
   }
 
+}
+
+window.onload = () => {
+  if (localStorage.getItem('books') === null) {
+    localStorage.setItem('books', JSON.stringify([]));
+  } else {
+    Book.renderBooks();
+  }
 }
 
 Book.renderBooks();
