@@ -1,4 +1,17 @@
-const books = [];
+const books = [
+  {
+    title: 'Title1',
+    author: 'author1'
+  },
+  {
+    title: 'Title2',
+    author: 'author2'
+  },
+  {
+    title: 'Title3',
+    author: 'author3'
+  },
+];
 class Book {
   constructor(title, author) {
     this.title = title;
@@ -6,15 +19,34 @@ class Book {
   }
 
   static addBook = (title, author) => {
-    console.log('called')
-    console.log(books)
     books.push({ title, author });
-    console.log(books);
   }
 
-  removeBook = () => {
-
+  static removeBook = (title) => {
+    books = books.filter((book) => book.title !== title);
+    console.log(books)
+    return books
   }
+
+  static renderBooks() {
+    // let books = 
+    const booksContainer = document.getElementById('books-container');
+    booksContainer.innerHTML = this.markupAllBooks();
+  }
+  
+  static markupAllBooks() {
+    let allBooksHTML = ``;
+    books.forEach((book, index) => {
+      allBooksHTML += `<div class="book" id="${book.title}">
+                        <p class="title">${book.title}</p>
+                        <p class="author">${book.author} </p>
+                        <button type="button" id="r_${book.title}">Remove</button>
+                        <hr>
+                      </div>`;
+    });
+    return allBooksHTML;
+  }
+
 
   static addEventListeners = () => {
     const addButton = document.getElementById('addButton');
@@ -26,3 +58,4 @@ class Book {
 }
 
 Book.addEventListeners();
+Book.renderBooks();
