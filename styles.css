@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
 
+main {
+  width: 50%;
+  margin: 0.5rem auto;
+}
+
+header {
+  width: 100%;
+}
+
 body {
   background-color: #fff;
   display: flex;
@@ -12,6 +21,11 @@ body {
   font-family: 'Patrick Hand', cursive;
 }
 
+body * {
+  font-family: inherit;
+  font-size: large;
+}
+
 button {
   cursor: pointer;
 }
@@ -19,6 +33,7 @@ button {
 #books-container {
   padding: 0.25rem;
   margin: 2rem auto;
+  border: 2px solid black;
 }
 
 #books-container :nth-child(even) {
@@ -37,7 +52,7 @@ button {
 nav {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   padding: 0.5rem;
   border: 1px solid black;
@@ -48,14 +63,18 @@ nav {
   font-weight: bold;
 }
 
+h1 {
+  font-size: 2rem;
+  margin: 0.5rem;
+}
+
 #links {
   font-weight: normal;
   padding: 0.25rem;
 }
 
 #date {
-  width: 65%;
-  padding: 0.4rem;
+  padding: 1rem;
   text-align: end;
 }
 
@@ -68,6 +87,8 @@ nav {
 #addBook {
   display: flex;
   flex-direction: column;
+  margin: 2rem auto;
+  width: 70%;
 }
 
 input,
@@ -97,6 +118,11 @@ input,
 
 input {
   border: 1px solid black;
+}
+
+footer {
+  width: 100%;
+  padding: 0.5rem;
 }
 
 #links,
