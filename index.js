@@ -38,7 +38,6 @@ class Book {
       allBooksHTML += `<div class="book" id="${book.title}">
                         <p class="title">"${book.title}" by ${book.author} </p>
                         <button type="button" class="shadow" id="r_${index}">Remove</button>
-                        <hr>
                       </div>`;
     });
     return allBooksHTML;

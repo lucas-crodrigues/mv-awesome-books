@@ -67,7 +67,7 @@ nav {
   flex-direction: column;
 }
 
-#addBook input,
+input,
 #addBook button {
   margin: 0.25rem;
 }
@@ -84,8 +84,18 @@ nav {
   background: linear-gradient(90deg, rgba(203, 197, 197, 1) 6%, rgba(0, 0, 0, 1) 37%, rgba(184, 184, 184, 1) 92%);
 }
 
+#contactInfo {
+  margin: 1rem auto;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+input {
+  border: 1px solid black;
+}
+
 #links,
 #date,
-footer {
-  display: none;
-}
+footer {}
