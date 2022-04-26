@@ -17,8 +17,8 @@ class Book {
 
   static removeBook = (e) => {
     const button = e.target;
-    const bookIndex = button.id.split('_')[1];
-    books = books.filter((book, index) => index != bookIndex);
+    const bookIndex = Number(button.id.split('_')[1]);
+    books = books.filter((book, index) => index !== bookIndex);
     localStorage.setItem('books', JSON.stringify(books));
     this.renderBooks();
     return books;
@@ -48,7 +48,7 @@ class Book {
   static addEventListeners = () => {
     const addButton = document.getElementById('addButton');
     addButton.addEventListener('click', this.addBook);
-    
+
     const removeButtons = Array.from(document.querySelectorAll('.book button'));
     removeButtons.forEach((button) => {
       button.addEventListener('click', this.removeBook);
