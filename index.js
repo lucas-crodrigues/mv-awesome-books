@@ -31,6 +31,11 @@ class Book {
   static renderBooks() {
     const booksContainer = document.getElementById('books-container');
     booksContainer.innerHTML = this.markupAllBooks();
+    if (booksContainer.innerHTML === '') {
+      booksContainer.style.display = 'none';
+    } else {
+      booksContainer.style.display = 'initial';
+    }
     Book.addEventListeners();
   }
 
