@@ -11,17 +11,29 @@
 
 <body>
   <header>
-    <h1>Awesome books</h1>
+    <nav>
+      <h1 id="mainTitle">Awesome books</h1>
+      <div id="links">
+        <button type="button" class="navButton">List</button>
+        <button type="button" class="navButton">Add new</button>
+        <button type="button" class="navButton">Contact</button>
+      </div>
+
+    </nav>
+    <div id="date">Date</div>
   </header>
   <main>
     <div id="books-container">
     </div>
-    <div class="addBook">
-      <input type="text" id="addTitle" placeholder="title" required>
-      <input type="text" id="addAuthor" placeholder="author" required>
-      <button type="button" id="addButton">Add</button>
+    <div id="addBook">
+      <div id="addLine"></div>
+      <input type="text" id="addTitle" placeholder="Title" required>
+      <input type="text" id="addAuthor" placeholder="Author" required>
+      <button type="button" id="addButton" class="shadow">Add</button>
     </div>
+    <div id="contactInfo"></div>
   </main>
+  <footer>Footer</footer>
   <script src="index.js"></script>
 </body>
 
