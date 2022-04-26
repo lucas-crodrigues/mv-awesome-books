@@ -3,6 +3,9 @@
 main {
   width: 50%;
   margin: 0.5rem auto;
+  display: flex;
+  flex-flow: column wrap;
+  align-content: center;
 }
 
 header {
@@ -34,6 +37,7 @@ button {
   padding: 0.25rem;
   margin: 2rem auto;
   border: 2px solid black;
+  width: max-content;
 }
 
 #books-container :nth-child(even) {
@@ -47,6 +51,10 @@ button {
   max-height: 1.5rem;
   align-items: center;
   margin: 0.25rem auto;
+}
+
+.title {
+  padding-right: 1rem;
 }
 
 nav {
