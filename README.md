@@ -36,34 +36,31 @@ LinkedIn: [Lucas Costa Rodrigues](https://www.linkedin.com/in/lucascostarodrigue
 
 👤 **Emmanuel Orji**
 
-GitHub: [@lucas-crodrigues](https://github.com/lucas-crodrigues)
+GitHub: [@emmiiorji](https://github.com/emmiiorji)
 
-Twitter: [@lcrodrigues58](https://twitter.com/lcrodrigues58)
-
-LinkedIn: [Lucas Costa Rodrigues](https://www.linkedin.com/in/lucascostarodrigues/)
+LinkedIn: [Emmanuel Orji](https://www.linkedin.com/in/emmanuel-orji-2a8317121/)
 
 👤 **Alvaro Ruiz**
 
-GitHub: [@lucas-crodrigues](https://github.com/lucas-crodrigues)
+GitHub: [@alvarorf](https://github.com/alvarorf)
 
-Twitter: [@lcrodrigues58](https://twitter.com/lcrodrigues58)
+Twitter: [@aaruizf](https://twitter.com/aaruizf)
 
-LinkedIn: [Lucas Costa Rodrigues](https://www.linkedin.com/in/lucascostarodrigues/)
+LinkedIn: [Alvaro Andrés R.](https://www.linkedin.com/in/alvaro-andr%C3%A9s-ruiz-florez/)
 
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/lucas-crodrigues/capstone-module-1/issues).
+Feel free to check the [issues page](https://github.com/lucas-crodrigues/mv-awesome-books/issues).
 
 ## Show your support
 Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-Original design idea by [Cindy Shin in Behance](https://www.behance.net/adagio07).
-
 Microverse team
 
 ## 📝 License
+
 This project is MIT licensed.
