@@ -54,4 +54,12 @@ class Book {
   }
 }
 
+window.onload = () => {
+  if (localStorage.getItem('books') === null) {
+    localStorage.setItem('books', JSON.stringify([]));
+  } else {
+    Book.renderBooks();
+  }
+}
+
 Book.renderBooks();
