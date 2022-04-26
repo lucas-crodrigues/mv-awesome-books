@@ -38,6 +38,7 @@ button {
   margin: 2rem auto;
   border: 2px solid black;
   width: max-content;
+  max-width: 100vh;
 }
 
 #books-container :nth-child(even) {
@@ -48,13 +49,14 @@ button {
   display: flex;
   justify-content: space-between;
   padding: 0.25rem;
-  max-height: 1.5rem;
+  max-height: max-content;
   align-items: center;
   margin: 0.25rem auto;
 }
 
 .title {
   padding-right: 1rem;
+  margin: 0;
 }
 
 nav {
