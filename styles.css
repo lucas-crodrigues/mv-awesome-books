@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
 
 main {
-  width: 50%;
+  width: 95%;
   margin: 0.5rem auto;
   display: flex;
   flex-flow: column wrap;
@@ -16,7 +16,7 @@ body {
   background-color: #fff;
   display: flex;
   flex-direction: column;
-  width: 60%;
+  width: 80%;
   margin: 0 auto;
   align-items: center;
   align-content: center;
@@ -38,7 +38,7 @@ button {
   margin: 2rem auto;
   border: 2px solid black;
   width: max-content;
-  max-width: 100vh;
+  max-width: 100%;
 }
 
 #books-container :nth-child(even) {
@@ -98,7 +98,7 @@ h1 {
   display: flex;
   flex-direction: column;
   margin: 2rem auto;
-  width: 70%;
+  width: 40%;
 }
 
 input,
