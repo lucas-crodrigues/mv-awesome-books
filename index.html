@@ -5,24 +5,40 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="./css/styles.css" />
   <title>Awesome Books</title>
 </head>
 
 <body>
   <header>
-    <h1>Awesome books</h1>
+    <nav>
+      <h1 id="mainTitle">Awesome books</h1>
+      <div id="links">
+        <button type="button" class="navButton">List</button>
+        <button type="button" class="navButton">Add new</button>
+        <button type="button" class="navButton">Contact</button>
+      </div>
+
+    </nav>
+    <div id="date">Date</div>
   </header>
   <main>
-    <div id="books-container">
-    </div>
-    <div class="addBook">
-      <input type="text" id="addTitle" placeholder="title" required>
-      <input type="text" id="addAuthor" placeholder="author" required>
-      <button type="button" id="addButton">Add</button>
-    </div>
+    <section id="booksList">
+      <h2>All Awesome Books</h2>
+      <div id="books-container">
+      </div>
+    </section>
+    <form id="addBook">
+      <div id="addLine"></div>
+      <h2>Add a new book</h2>
+      <input type="text" id="addTitle" placeholder="Title" required>
+      <input type="text" id="addAuthor" placeholder="Author" required>
+      <button type="submit" id="addButton" class="shadow">Add</button>
+    </form>
+    <div id="contactInfo"></div>
   </main>
-  <script src="index.js"></script>
+  <footer>Copyright</footer>
+  <script src="./js/index.js"></script>
 </body>
 
 </html>

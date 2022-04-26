@@ -1,5 +1,4 @@
-let books = localStorage.getItem('books');
-books = JSON.parse(books) || [];
+let books = JSON.parse(localStorage.getItem('books')) || [];
 
 class Book {
   constructor(title, author) {
@@ -24,30 +23,37 @@ class Book {
     return books;
   }
 
-  static getLocalStorage = () => JSON.parse(localStorage.getItem('books'))
+  static getLocalStorage = () => {
+    const books = JSON.parse(localStorage.getItem('books')) || [];
+    return books;
+  }
 
   static renderBooks() {
     const booksContainer = document.getElementById('books-container');
+    const booksList = document.getElementById('booksList');
     booksContainer.innerHTML = this.markupAllBooks();
+    if (booksContainer.innerHTML === '') {
+      booksList.style.display = 'none';
+    } else {
+      booksList.style.display = 'initial';
+    }
     Book.addEventListeners();
   }
 
   static markupAllBooks() {
     let allBooksHTML = '';
-    JSON.parse(localStorage.getItem('books')).forEach((book, index) => {
+    this.getLocalStorage().forEach((book, index) => {
       allBooksHTML += `<div class="book" id="${book.title}">
-                        <p class="title">Title: ${book.title}</p>
-                        <p class="author">By: ${book.author} </p>
-                        <button type="button" id="r_${index}">Remove</button>
-                        <hr>
+                        <p class="title">"${book.title}" by ${book.author} </p>
+                        <button type="button" class="shadow" id="r_${index}">Remove</button>
                       </div>`;
     });
     return allBooksHTML;
   }
 
   static addEventListeners = () => {
-    const addButton = document.getElementById('addButton');
-    addButton.addEventListener('click', this.addBook);
+    const addForm = document.getElementById('addBook');
+    addForm.addEventListener('submit', this.addBook);
 
     const removeButtons = Array.from(document.querySelectorAll('.book button'));
     removeButtons.forEach((button) => {
