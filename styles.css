@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+
 body {
   background-color: #fff;
   display: flex;
@@ -7,6 +9,7 @@ body {
   align-items: center;
   align-content: center;
   justify-content: center;
+  font-family: 'Patrick Hand', cursive;
 }
 
 button {
