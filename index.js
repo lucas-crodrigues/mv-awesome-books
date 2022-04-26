@@ -30,11 +30,12 @@ class Book {
 
   static renderBooks() {
     const booksContainer = document.getElementById('books-container');
+    const booksList = document.getElementById('booksList');
     booksContainer.innerHTML = this.markupAllBooks();
     if (booksContainer.innerHTML === '') {
-      booksContainer.style.display = 'none';
+      booksList.style.display = 'none';
     } else {
-      booksContainer.style.display = 'initial';
+      booksList.style.display = 'initial';
     }
     Book.addEventListeners();
   }
