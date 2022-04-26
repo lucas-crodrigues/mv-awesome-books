@@ -6,7 +6,7 @@ class Book {
     this.author = author;
   }
 
-  static addBook = (e) => {
+  static addBook = () => {
     const ititle = document.getElementById('addTitle').value;
     const iauthor = document.getElementById('addAuthor').value;
     books.push({ title: ititle, author: iauthor });
