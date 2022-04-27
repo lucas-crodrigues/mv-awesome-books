@@ -134,6 +134,7 @@ input,
   display: flex;
   justify-content: center;
   text-align: center;
+  flex-flow: column;
 }
 
 input {
