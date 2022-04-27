@@ -6,12 +6,18 @@ class Book {
     this.author = author;
   }
 
-  static addBook = () => {
+  static addBook = (e) => {
+    e.preventDefault();
     const ititle = document.getElementById('addTitle').value;
     const iauthor = document.getElementById('addAuthor').value;
     books.push({ title: ititle, author: iauthor });
     localStorage.setItem('books', JSON.stringify(books));
-    this.renderBooks();
+    document.querySelectorAll('form input').forEach((element) => {
+      element.value = '';
+    });
+    alert('Book successfully added to your collection');
+    document.getElementById('message').innerHTML = '';
+    // this.renderBooks();
   }
 
   static removeBook = (e) => {
@@ -34,10 +40,12 @@ class Book {
     const addBook = document.getElementById('addBook');
     booksContainer.innerHTML = this.markupAllBooks();
     if (booksContainer.innerHTML === '') {
-      booksList.style.display = 'none';
-      addBook.innerHTML.display = 'block';
+      booksList.classList.toggle('hide');
+      document.getElementById('message').innerHTML = 'Sorry, there are no registered books. Add a book below:';
+      addBook.classList.toggle('hide');
     } else {
-      booksList.style.display = 'initial';
+      // booksList.style.display = 'initial';
+      document.getElementById('message').innerHTML = '';
     }
     Book.addEventListeners();
   }

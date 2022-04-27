@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
 
 main {
   width: 95%;
@@ -104,7 +104,7 @@ h1 {
   cursor: pointer;
 }
 
-#addBook {
+.addBook {
   display: flex;
   flex-direction: column;
   margin: 2rem auto;
@@ -128,7 +128,7 @@ input,
   background: linear-gradient(90deg, rgba(203, 197, 197, 1) 6%, rgba(0, 0, 0, 1) 37%, rgba(184, 184, 184, 1) 92%);
 }
 
-#contactInfo {
+.contactInfo {
   margin: 1rem auto;
   padding: 0.5rem;
   display: flex;
@@ -149,4 +149,8 @@ footer {
   width: 50%;
   margin: 0.5rem auto;
   font-style: italic;
+}
+
+main .hide {
+  display: none;
 }
