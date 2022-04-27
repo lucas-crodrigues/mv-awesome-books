@@ -15,7 +15,6 @@ class Book {
     document.querySelectorAll('form input').forEach((element) => {
       element.value = '';
     });
-    alert('Book successfully added to your collection');
     document.getElementById('message').innerHTML = '';
   }
 
@@ -34,6 +33,7 @@ class Book {
   }
 
   static renderBooks() {
+    this.addDate();
     const booksContainer = document.getElementById('books-container');
     const booksList = document.getElementById('booksList');
     const addBook = document.getElementById('addBook');
@@ -65,6 +65,7 @@ class Book {
         booksList.classList.remove('hide');
         contactInfo.classList.add('hide');
         addBook.classList.add('hide');
+        this.renderBooks();
         break;
       case 'navContact':
         booksList.classList.add('hide');
@@ -91,7 +92,6 @@ class Book {
     });
 
     const addBook = document.getElementById('navAdd');
-    console.log(addBook);
     const booksList = document.getElementById('navList');
     const contactInfo = document.getElementById('navContact');
     addBook.addEventListener('click', (e) => this.switchView(e));
@@ -103,17 +103,19 @@ class Book {
     window.localStorage.setItem('books', JSON.stringify([]));
     window.location.reload();
   };
+
+  static addDate = () => {
+    const dateDiv = document.getElementById('date');
+    const date = Date().split(' ').splice(0, 5).join(' ');;
+    dateDiv.textContent = date;
+  };
 }
 
 
 
 
 /*
-const addDate = () => {
-  const dateDiv = document.getElementById('date');
-  const date = DateTime.now().setLocale('en-US').toFormat('DD HH:mm');
-  dateDiv.textContent = date;
-};
+const 
 */
 
 Book.renderBooks();

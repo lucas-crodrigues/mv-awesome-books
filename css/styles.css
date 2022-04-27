@@ -1,4 +1,4 @@
- @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
 
 main {
   width: 95%;
@@ -144,6 +144,7 @@ input {
 footer {
   width: 100%;
   padding: 0.5rem;
+  border: 1px solid black;
 }
 
 .author {
