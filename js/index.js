@@ -1,5 +1,7 @@
 let books = JSON.parse(localStorage.getItem('books')) || [];
-
+const booksList = document.getElementById('booksList');
+const addBook = document.getElementById('addBook');
+const contactInfo = document.getElementById('contactInfo');
 class Book {
   constructor(title, author) {
     this.title = title;
@@ -35,8 +37,6 @@ class Book {
   static renderBooks() {
     this.addDate();
     const booksContainer = document.getElementById('books-container');
-    const booksList = document.getElementById('booksList');
-    const addBook = document.getElementById('addBook');
     booksContainer.innerHTML = this.markupAllBooks();
     if (booksContainer.innerHTML === '') {
       booksList.classList.toggle('hide');
@@ -106,16 +106,9 @@ class Book {
 
   static addDate = () => {
     const dateDiv = document.getElementById('date');
-    const date = Date().split(' ').splice(0, 5).join(' ');;
+    const date = Date().split(' ').splice(0, 5).join(' ');
     dateDiv.textContent = date;
   };
 }
-
-
-
-
-/*
-const 
-*/
 
 Book.renderBooks();
