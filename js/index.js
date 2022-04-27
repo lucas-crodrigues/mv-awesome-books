@@ -31,9 +31,11 @@ class Book {
   static renderBooks() {
     const booksContainer = document.getElementById('books-container');
     const booksList = document.getElementById('booksList');
+    const addBook = document.getElementById('addBook');
     booksContainer.innerHTML = this.markupAllBooks();
     if (booksContainer.innerHTML === '') {
       booksList.style.display = 'none';
+      addBook.innerHTML.display = 'block';
     } else {
       booksList.style.display = 'initial';
     }
@@ -67,13 +69,9 @@ class Book {
   };
 }
 
+
 /*
-const addBook = document.getElementById('addBook');
-const booksList = document.getElementById('booksList');
-const contactInfo = document.getElementById('contactInfo');
-addBook.addEventListener('click', (e) => switchView(e));
-booksList.addEventListener('click', (e) => switchView(e));
-navContact.addEventListener('click', (e) => switchView(e));
+
 const switchView = (e) => {
   switch (e.target.id) {
     case 'booksList':
@@ -95,6 +93,13 @@ const switchView = (e) => {
       break;
   }
 };
+const addBook = document.getElementById('addBook');
+const booksList = document.getElementById('booksList');
+const contactInfo = document.getElementById('contactInfo');
+addBook.addEventListener('click', (e) => switchView(e));
+booksList.addEventListener('click', (e) => switchView(e));
+navContact.addEventListener('click', (e) => switchView(e));
+
 
 const addDate = () => {
   const dateDiv = document.getElementById('date');
