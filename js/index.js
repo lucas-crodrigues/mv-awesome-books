@@ -60,6 +60,47 @@ class Book {
       button.addEventListener('click', this.removeBook);
     });
   }
+
+  static clearBooks = () => {
+    window.localStorage.setItem('books', JSON.stringify([]));
+    window.location.reload(); //Or invoke renderBooks()
+  };
 }
+
+/*
+const addBook = document.getElementById('addBook');
+const booksList = document.getElementById('booksList');
+const contactInfo = document.getElementById('contactInfo');
+addBook.addEventListener('click', (e) => switchView(e));
+booksList.addEventListener('click', (e) => switchView(e));
+navContact.addEventListener('click', (e) => switchView(e));
+const switchView = (e) => {
+  switch (e.target.id) {
+    case 'booksList':
+      booksList.style.display = 'block';
+      contactInfo.style.display = 'none';
+      addBook.style.display = 'none';
+      break;
+    case 'contactInfo':
+      booksList.style.display = 'none';
+      contactInfo.style.display = 'block';
+      addBook.style.display = 'none';
+      break;
+    case 'addBook':
+      booksMainCont.style.display = 'none';
+      contactInfo.style.display = 'none';
+      addBook.style.display = 'flex';
+      break;
+    default:
+      break;
+  }
+};
+
+const addDate = () => {
+  const dateDiv = document.getElementById('date');
+  const date = DateTime.now().setLocale('en-US').toFormat('DD HH:mm');
+  dateDiv.textContent = date;
+};
+*/
 
 Book.renderBooks();
