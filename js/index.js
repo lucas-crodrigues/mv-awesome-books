@@ -17,7 +17,6 @@ class Book {
     });
     alert('Book successfully added to your collection');
     document.getElementById('message').innerHTML = '';
-    // this.renderBooks();
   }
 
   static removeBook = (e) => {
@@ -44,7 +43,6 @@ class Book {
       document.getElementById('message').innerHTML = 'Sorry, there are no registered books. Add a book below:';
       addBook.classList.toggle('hide');
     } else {
-      // booksList.style.display = 'initial';
       document.getElementById('message').innerHTML = '';
     }
     Book.addEventListeners();
@@ -61,6 +59,28 @@ class Book {
     return allBooksHTML;
   }
 
+  static switchView = (e) => {
+    switch (e.target.id) {
+      case 'navList':
+        booksList.classList.remove('hide');
+        contactInfo.classList.add('hide');
+        addBook.classList.add('hide');
+        break;
+      case 'navContact':
+        booksList.classList.add('hide');
+        contactInfo.classList.remove('hide');
+        addBook.classList.add('hide');
+        break;
+      case 'navAdd':
+        booksList.classList.add('hide');
+        contactInfo.classList.add('hide');
+        addBook.classList.remove('hide');
+        break;
+      default:
+        break;
+    }
+  };
+
   static addEventListeners = () => {
     const addForm = document.getElementById('addBook');
     addForm.addEventListener('submit', this.addBook);
@@ -69,46 +89,26 @@ class Book {
     removeButtons.forEach((button) => {
       button.addEventListener('click', this.removeBook);
     });
+
+    const addBook = document.getElementById('navAdd');
+    console.log(addBook);
+    const booksList = document.getElementById('navList');
+    const contactInfo = document.getElementById('navContact');
+    addBook.addEventListener('click', (e) => this.switchView(e));
+    booksList.addEventListener('click', (e) => this.switchView(e));
+    contactInfo.addEventListener('click', (e) => this.switchView(e));
   }
 
   static clearBooks = () => {
     window.localStorage.setItem('books', JSON.stringify([]));
-    window.location.reload(); //Or invoke renderBooks()
+    window.location.reload();
   };
 }
 
 
+
+
 /*
-
-const switchView = (e) => {
-  switch (e.target.id) {
-    case 'booksList':
-      booksList.style.display = 'block';
-      contactInfo.style.display = 'none';
-      addBook.style.display = 'none';
-      break;
-    case 'contactInfo':
-      booksList.style.display = 'none';
-      contactInfo.style.display = 'block';
-      addBook.style.display = 'none';
-      break;
-    case 'addBook':
-      booksMainCont.style.display = 'none';
-      contactInfo.style.display = 'none';
-      addBook.style.display = 'flex';
-      break;
-    default:
-      break;
-  }
-};
-const addBook = document.getElementById('addBook');
-const booksList = document.getElementById('booksList');
-const contactInfo = document.getElementById('contactInfo');
-addBook.addEventListener('click', (e) => switchView(e));
-booksList.addEventListener('click', (e) => switchView(e));
-navContact.addEventListener('click', (e) => switchView(e));
-
-
 const addDate = () => {
   const dateDiv = document.getElementById('date');
   const date = DateTime.now().setLocale('en-US').toFormat('DD HH:mm');
