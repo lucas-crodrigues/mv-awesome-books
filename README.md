@@ -1,4 +1,4 @@
-# Portfolio Microverse
+# Awesome Books
 This is the Awesome Books project for the first week of the second module n the microverse program.
 
 ## Built With
@@ -19,10 +19,10 @@ This is the Awesome Books project for the first week of the second module n the 
 
 To get a local copy up and running follow these simple example steps.
 
-  1- Download files
+  1- Download files <br>
   2- Run index.html in browser
 
-To clone the repo run the line "git clone https://github.com/lucas-crodrigues/mv-awesome-books.git" on your console
+To clone the repo run the line `git clone https://github.com/lucas-crodrigues/mv-awesome-books.git` on your console:
 
 ## Authors
 
